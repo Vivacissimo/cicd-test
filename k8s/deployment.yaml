@@ -11,9 +11,12 @@ spec:
     metadata:
       labels:
         app: cicd-test-app
+      annotations:
+        redeploy: "v2"
     spec:
       containers:
         - name: cicd-test-app
           image: ghcr.io/vivacissimo/cicd-test:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 5000
