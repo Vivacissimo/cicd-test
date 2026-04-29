@@ -12,7 +12,7 @@ spec:
       labels:
         app: cicd-test-app
       annotations:
-        redeploy: "v3"
+        redeploy: "v4"
     spec:
       containers:
         - name: cicd-test-app
