@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cicd-test-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cicd-test-app
+  template:
+    metadata:
+      labels:
+        app: cicd-test-app
+    spec:
+      containers:
+        - name: cicd-test-app
+          image: ghcr.io/GITHUB_USERNAME/my-cicd-test:latest
+          ports:
+            - containerPort: 5000
